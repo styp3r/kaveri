@@ -1,3 +1,34 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
+}
+
+.homePageContainer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40rem; /* remove this after positiong inner elements*/
+}
+
+.homeNavContainer{
+  width: 20%;
+  height: 20rem;
+  margin: 10rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.homeSummary{
+  width: 80%;
+  height: 20rem;
+  margin: 10rem 0 0 0;
+  background-color: blanchedalmond;
+}
+
+.homeNavigation{
+  width: 90%;
+  height: 90%;
+  border: solid 1px #c8c8c8;
+  border-radius: 1rem;
 }

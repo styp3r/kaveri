@@ -2,12 +2,16 @@ function Home() {
     return (
         <div id="homePage">
 
-            <div className="homeNavContainer">
-            </div>
+            <div className="homePageContainer">
 
-            <div className="homeSummary">
-            </div>
+                <div className="homeNavContainer">
+                    <div className="homeNavigation">
+                        
+                    </div>
+                </div>
 
+                <div className="homeSummary"></div>
+            </div>
         </div>
     );
 }
