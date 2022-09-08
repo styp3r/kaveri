@@ -1,5 +1,29 @@
-#homePage, #accountsPage, #partnersPage, #vendorsPage, #licensesPage, #insightsPage{
+#homePage, #accountsPage, #partnersPage, #vendorsPage, #licensesPage, #insightsPage, #uploadDSPage, #editDSPage{
   margin: 0 0 0 25rem;
+}
+
+#viewList, #postAdd, #editNote{
+  font-size: 4rem;
+}
+
+#uploadDSBtn{
+  width: 10rem;
+  height: 2rem;
+  margin: 3rem 1rem 1rem 0;
+  outline: none;
+  background-color: #8d8e8e;
+  border: none;
+  border-radius: 0.5rem;
+  color: #ffffff;
+}
+
+#dateUpload, #saleUpload, #gstUpload, #discountUpload, #creditCardUpload, #digitalUpload{
+  width: 10rem;
+  height: 2rem;
+  margin: 1rem 1rem 1rem 0;
+  border-radius: 0.3rem;
+  padding: 0 0 0 0.5rem;
+  border: solid 1px #dfdfdf;
 }
 
 .App {
@@ -95,6 +119,71 @@
   margin: 3rem 3rem 3rem 0;
   border-radius: 1rem;
   border: solid 1px #dfdfdf;
+}
+
+.dailySheetBlock{
+  text-align: left;
+  margin: 6rem 0 0 0;
+}
+
+.dailySheetsMenu{
+  width: 90%;
+  height: 20rem;
+  border-radius: 1rem;
+  display: flex;
+}
+
+.viewDailySheet{
+  width: 20rem;
+  height: 10rem;
+  background-color: #464646;
+  margin: 2rem 2rem 2rem 0;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.uploadDailySheet{
+  width: 10rem;
+  height: 10rem;
+  background-color: #00e6b8;
+  margin: 2rem 2rem 2rem 0;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.editDailySheet{
+  width: 10rem;
+  height: 10rem;
+  background-color: #ffcc00;
+  margin: 2rem 2rem 2rem 0;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.viewDailySheet:hover, .uploadDailySheet:hover, .editDailySheet:hover, .uploadDSBtn:hover{
+  cursor: pointer;
+}
+
+.uploadDSLinkBtn, .editDSLinkBtn{
+  text-decoration: none;
+}
+
+.inputFieldsForUploadBlock{
+  width: 30rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5rem 0 0 0;
+  text-align: left;
 }
 
 
