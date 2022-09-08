@@ -6,7 +6,8 @@ import LicensesPage from './components/LicensesPage';
 import Insights from './components/Insights';
 import PartnersPage from './components/PartnersPage';
 import UploadDS from './components/UploadDS';
-import EditDS from './components/EditDS'
+import EditDS from './components/EditDS';
+import ViewDS from './components/ViewDS';
 import Auth from './components/Auth';
 import Navbar from './components/Navbar';
 import {
@@ -31,6 +32,7 @@ function App() {
           <Route path="insights" element={<Insights />} />
 
           {/*Invisible Page Elements */}
+          <Route path="viewDS" element={<ViewDS />} />
           <Route path="uploadDS" element={<UploadDS />} />
           <Route path="editDS" element={<EditDS />} />
         </Routes>

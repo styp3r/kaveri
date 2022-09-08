@@ -7,9 +7,12 @@ function AccountsPage() {
             <div className="dailySheetBlock">
                 <h3>Daily Sheets</h3>
                 <div className="dailySheetsMenu">
+                    <Link className = "viewDSLinkBtn" to="/viewDS">
                     <div className="viewDailySheet">
                         <span class="material-icons" id="viewList">view_list</span>
                     </div>
+                    </Link>
+                    
                     <Link className = "uploadDSLinkBtn" to="/uploadDS">
                         <div className="uploadDailySheet">
                             <span class="material-icons" id="postAdd">post_add</span>
