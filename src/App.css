@@ -1,13 +1,15 @@
+#homePage, #accountsPage, #vendorsPage, #licensesPage, #insightsPage{
+  margin: 0 0 0 25rem;
+}
+
 .App {
   text-align: center;
   overflow-x: hidden;
 }
 
-.homePageContainer{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 40rem; /* remove this after positiong inner elements*/
+.routerNavLink{
+  color: #000000;
+  text-decoration: none;
 }
 
 .homeNavContainer{
@@ -17,7 +19,6 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  border-right: solid 1px #e3e3e3;
 }
 
 .homeNavigation{
@@ -47,7 +48,36 @@
   cursor: pointer;
 }
 
-.homeSummary{
-  width: 80%;
-  height: 100%;
+.balanceValuesBlock{
+  width: 90%;
+  margin: 5rem 0 5rem 0;
+  display: flex;
+  justify-content: space-evenly;
 }
+
+.balanceCash{
+  width: 20rem;
+  height: 10rem;
+  border-radius: 1rem;
+  background: linear-gradient(45deg, #00cc99, #00e6b8);
+  color: #ffffff;
+  text-align: left;
+}
+
+.balanceRevenue{
+  width: 20rem;
+  height: 10rem;
+  border-radius: 1rem;
+  background-color: #464646;
+  color: #ffffff;
+  text-align: left;
+}
+
+.summaryChart, .performanceChart{
+  width: 90%;
+  height: 30rem;
+  border: solid 1px #dfdfdf;
+  border-radius: 1rem;
+}
+
+

@@ -1,14 +1,21 @@
-import { Link } from 'react-router-dom'
- 
 function Home() {
     return (
         <div id="homePage">
-
-            <div className="homePageContainer">
-
-                <div className="homeSummary"></div>
+            <h1>Overview</h1>
+            <div className="overviewBlock">
+                <div className="balanceValuesBlock">
+                    <div className="balanceCash">
+                        <p className="balanceCashTitle">Available Cash</p>
+                        <p>Rs.1000</p>
+                    </div>
+                    <div className="balanceRevenue">
+                        <p className="balanceRevenueTitle">Total Revenue</p>
+                        <p>Rs.1000</p>
+                    </div>
+                </div>
+                <div className="performanceChart"></div>
             </div>
-        </div>
+        </div >
     );
 }
 
