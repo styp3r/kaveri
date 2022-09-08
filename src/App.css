@@ -12,23 +12,41 @@
 
 .homeNavContainer{
   width: 20%;
-  height: 20rem;
-  margin: 10rem 0 0 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-right: solid 1px #e3e3e3;
+}
+
+.homeNavigation{
+  width: 90%;
   display: flex;
   justify-content: center;
   align-content: center;
 }
 
-.homeSummary{
-  width: 80%;
+.navLinkBlock{
+  width: 95%;
   height: 20rem;
   margin: 10rem 0 0 0;
-  background-color: blanchedalmond;
+  text-align: left;
 }
 
-.homeNavigation{
-  width: 90%;
-  height: 90%;
-  border: solid 1px #c8c8c8;
-  border-radius: 1rem;
+.navLink{
+  margin: 2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px #dfdfdf;
+}
+
+.navLink:hover{
+  cursor: pointer;
+}
+
+.homeSummary{
+  width: 80%;
+  height: 100%;
 }
