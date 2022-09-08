@@ -1,6 +1,8 @@
 function LicensesPage(){
     return (
-        <div id = "licensesPage"></div>
+        <div id = "licensesPage">
+            <h1>Licenses</h1>
+        </div>
     );
 }
 

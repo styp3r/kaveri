@@ -1,6 +1,8 @@
 function AccountsPage(){
     return (
-        <div id = "accountsPage"></div>
+        <div id = "accountsPage">
+            <h1>Accounts</h1>
+        </div>
     );
 }
 
