@@ -4,6 +4,7 @@ import AccountsPage from './components/AccountsPage';
 import VendorsPage from './components/VendorsPage';
 import LicensesPage from './components/LicensesPage';
 import Insights from './components/Insights';
+import PartnersPage from './components/PartnersPage';
 import Auth from './components/Auth';
 import Navbar from './components/Navbar';
 import {
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="accounts" element={<AccountsPage />} />
+          <Route path="partners" element={<PartnersPage />} />
           <Route path="vendors" element={<VendorsPage />} />
           <Route path="licenses" element={<LicensesPage />} />
           <Route path="insights" element={<Insights />} />
