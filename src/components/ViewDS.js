@@ -1,16 +1,21 @@
 import { supabase } from '../supabaseClient';
-import React from 'react';
+import React, { useState } from 'react';
 
 function ViewDS() {
 
-    async function getData() {
-        const { data, error } = await supabase.from('2022').select('*');
+    const [dailySheetFig, setDailySheetFig] = useState("");
 
-        if(data){
-            console.log(data[0].date, data[0].sale, data[0].gst, data[0].discount, data[0].creditCard, data[0].digital)
+    async function getData() {
+        const { data, error } = await supabase.from('2022').select();
+
+        if (data) {
+            for (let i in data) {
+                //console.log(data[i].date, data[i].sale, data[i].gst, data[i].discount, data[i].creditCard, data[i].digital)
+                setDailySheetFig(data[i].date +" "+ data[i].sale +" "+ data[i].gst +" "+ data[i].discount +" "+ data[i].creditCard +" "+ data[i].digital);
+            }
         }
 
-        if(error){
+        if (error) {
             console.log(error);
         }
     }
@@ -18,6 +23,7 @@ function ViewDS() {
     return (
         <div id="viewDSPage">
             <h1>View Daily Sheet</h1>
+            <p>{dailySheetFig}</p>
             <button onClick={() => getData()}>Get Data</button>
         </div>
     );
