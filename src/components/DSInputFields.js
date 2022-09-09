@@ -18,9 +18,9 @@ function DSInputFields() {
     async function handleUpload() {
         //If entry already exists, overwrite. Else, Upload.
         if (isEnabled !== false) {
-            console.log(date, sale, gst, discount, creditCard, digital)
+            //console.log(date, sale, gst, discount, creditCard, digital)
             let year = date.substring(0, 4);
-            console.log(year);
+            //console.log(year);
 
             await supabase
                 .from(year)
