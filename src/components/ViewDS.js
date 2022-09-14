@@ -8,7 +8,7 @@ function ViewDS() {
 
     async function getData() {
         const { data, error } = await supabase
-            .from('2022')
+            .from('kav2022')
             .select('*')
             .eq('date', fetchDate)
 

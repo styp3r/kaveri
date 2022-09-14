@@ -65,6 +65,7 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   display: flex;
+  background-color: #ffffff;
   justify-content: space-between;
   border: solid 1px #dfdfdf;
 }
@@ -208,17 +209,17 @@
   height: 20rem;
 }
 
-.cashFlowDownloadBtn{
+.cashFlowGenBtn{
   display: block;
   width: 10rem;
   border: none;
   padding: 0.5rem;
   border-radius: 0.5rem;
   color: #ffffff;
-  background-color: #00e6b8;
+  background-color: #00b0e6;
 }
 
-.cashFlowDownloadBtn:hover{
+.cashFlowGenBtn:hover{
   cursor: pointer;
 }
 

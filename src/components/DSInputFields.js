@@ -27,7 +27,7 @@ function DSInputFields() {
             //console.log(year);
 
             await supabase
-                .from(year)
+                .from("kav"+year)
                 .upsert([{ date: date, sale: sale, gst: gst, discount: discount, partnerPending: partnerPending, cash: cash, creditCard: creditCard, digital: digital }])
 
             alert("Successfully Uploaded!");
