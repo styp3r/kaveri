@@ -18,7 +18,7 @@ function ViewDS() {
                     console.log(data[i].date)
                 }
                 //console.log(data[i].date, data[i].sale, data[i].gst, data[i].discount, data[i].creditCard, data[i].digital)
-                setDailySheetFig(data[i].date + " " + data[i].sale + " " + data[i].gst + " " + data[i].discount + " " + data[i].creditCard + " " + data[i].digital);
+                setDailySheetFig(data[i].date + " " + data[i].sale + " " + data[i].gst + " " + data[i].discount + " " + data[i].partnerPending +" " + data[i].cash + " " + data[i].creditCard + " " + data[i].digital);
             }
         }
 
