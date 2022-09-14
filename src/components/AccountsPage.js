@@ -1,33 +1,34 @@
 import React, { useState } from 'react';
 import { supabase } from '../supabaseClient';
 import { Link } from 'react-router-dom';
+import DisplayItemsFromServer from './DisplayItemsFromServer'
 
 function AccountsPage() {
 
-    const [startDate, setStartDate] = useState("")
-    const [endDate, setEndDate] = useState("")
-    const [dailySheetFig, setDailySheetFig] = useState("")
+    const [monthDate, setMonthDate] = useState("")
 
     const [itemArr, setItemArr] = useState([])
 
+    //Retrieve data and generate excel sheet for data between this date range
     async function generateCashFlow() {
-        //console.log(startDate, endDate)
-        //Retrieve data and generate excel sheet for data between this date range
-
         let { data: kav2022, error } = await supabase
             .from('kav2022')
             .select('*')
-            //.eq('date', startDate)
 
-            setItemArr(kav2022)
-            console.log(itemArr)
-        /*if (data) {
-            //console.log(data[i].date, data[i].sale, data[i].gst, data[i].discount, data[i].creditCard, data[i].digital)
-            setDailySheetFig(data[0].date + " " + data[0].sale + " " + data[0].gst + " " + data[0].discount + " " + data[0].partnerPending + " " + data[0].cash + " " + data[0].creditCard + " " + data[0].digital);
-        }*/
+
+        setItemArr(kav2022)
 
         if (error) {
             console.log(error);
+        }
+    }
+
+    function dispItems(d) {
+        //Send retrieved values to excel generator instead of just displaying items
+        if ((d.date).includes(monthDate)) {
+            return (
+                <DisplayItemsFromServer date={d.date} sale={d.sale} gst={d.gst} discount={d.discount} cred={d.creditCard} dig={d.digital} pPending={d.partnerPending} cash={d.cash} />
+            );
         }
     }
 
@@ -60,19 +61,15 @@ function AccountsPage() {
                 </div>
             </div>
 
+            {/* Cash Flow */}
             <div className="cashFlowBlock">
                 <h2>Cash Flow Report</h2>
-                <p>Select the date range for which you want to generate Cash Flow report</p>
-                <div className="startDateBlock">
-                    <p>Start Date: </p>
-                    <input onChange={(e) => setStartDate(e.target.value)} className="dateInputBox" type="date" />
-                </div>
-                <div className="endDateBlock">
-                    <p>End Date: </p>
-                    <input onChange={(e) => setEndDate(e.target.value)} className="dateInputBox" type="date" />
+                <p>Select the Month and Year From The Menu Below to Generate Cash Flow Report</p>
+                <div className="monthDateBlock">
+                    <input onChange={(e) => setMonthDate(e.target.value)} className="dateInputBox" type="month" />
                 </div>
                 <button onClick={() => generateCashFlow()} className="cashFlowGenBtn">Generate</button>
-                <p>{dailySheetFig}</p>
+                {itemArr.map(dispItems)}
             </div>
 
         </div>

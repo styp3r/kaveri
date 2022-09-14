@@ -1,18 +1,62 @@
+import React, { useState } from 'react';
+import { supabase } from '../supabaseClient';
+
+
 function Home() {
+
+    const [itemArr, setItemArr] = useState([])
+
+    async function getRevenue() {
+
+        let { data: kav2022, error } = await supabase
+            .from('kav2022')
+            .select('*')
+
+
+        setItemArr(kav2022)
+
+
+        if (error) {
+            console.log(error);
+        }
+    }
+
+    function dispItems(d) {
+        return d.sale;
+    }
+
+    function dispCash(c) {
+        return c.cash;
+    }
+
+
+    let sumArr = itemArr.map(dispItems);
+    let cashArr = itemArr.map(dispCash);
+    let cash = 0
+    let rev = 0
+
+    for (let i in sumArr) {
+        rev = rev + sumArr[i]
+    }
+
+    for (let j in cashArr) {
+        cash = cash + cashArr[j]
+    }
+
     return (
-        <div id="homePage">
-            <h1>Overview</h1>
+        <div id="homePage" onLoad={getRevenue()}>
             <div className="overviewBlock">
 
                 <div className="balanceValuesBlock">
                     <div className="balanceCash">
                         <p className="balanceCashTitle">Available Cash</p>
-                        <p>Rs.1000</p>
+                        <p>Rs. {cash}</p>
                     </div>
                     <div className="balanceRevenue">
                         <p className="balanceRevenueTitle">Total Revenue</p>
-                        <p>Rs.1000</p>
+                        <p>Rs. {rev}</p>
                     </div>
+                    {/*<button onClick={() => generateCashFlow()} className="cashFlowGenBtn">Generate</button>*/}
                 </div>
 
                 <h3>Performance Overview</h3>
@@ -57,7 +101,7 @@ function Home() {
                     </div>
                 </div>
 
-                
+
             </div>
         </div >
     );
