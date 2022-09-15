@@ -5,6 +5,7 @@ function DSInputFields() {
 
     //Daily Sheet Parameters
     const [date, setDate] = useState("");
+    const [shop, setShop] = useState("");
     const [sale, setSale] = useState(0);
     const [gst, setGST] = useState(0);
     const [discount, setDiscount] = useState(0);
@@ -23,12 +24,12 @@ function DSInputFields() {
         //If entry already exists, overwrite. Else, Upload.
         if (isEnabled !== false) {
             //console.log(date, sale, gst, discount, creditCard, digital)
-            let year = date.substring(0, 4);
+
             //console.log(year);
 
             await supabase
-                .from("kav"+year)
-                .upsert([{ date: date, sale: sale, gst: gst, discount: discount, partnerPending: partnerPending, cash: cash, creditCard: creditCard, digital: digital }])
+                .from("kaveri")
+                .upsert([{ key: date + shop, date: date, shop: shop, sale: sale, gst: gst, discount: discount, partnerPending: partnerPending, cash: cash, creditCard: creditCard, digital: digital }])
 
             alert("Successfully Uploaded!");
         }
@@ -41,7 +42,19 @@ function DSInputFields() {
         <div className="inputFieldsForUploadBlock">
             <h3>Enter Daily Sheet Parameters</h3>
             <div className="inputBlock">
-                <input onChange={(e) => { setIsEnabled(true); setDate(e.target.value) }} className = "dateInputBox" id="dateUpload" type="date" required />
+                <input onChange={(e) => { setIsEnabled(true); setDate(e.target.value) }} className="dateInputBox" id="dateUpload" type="date" required />
+                {/*<input onChange={(e) => setShop(e.target.value)} id="shopUpload" type="text" placeholder="Shop" required />*/}
+                <select id="shopUpload" onChange={(e) => setShop(e.target.value)} required>
+                    <option value="BTM">BTM</option>
+                    <option value="EC2">EC2</option>
+                    <option value="JBN">JBN</option>
+                    <option value="VTR">VTR</option>
+                    <option value="HRU">HRU</option>
+                    <option value="KTR">KTR</option>
+                    <option value="DDK">DDK</option>
+                    <option value="MLL">MLL</option>
+                    <option value="ORR">ORR</option>
+                </select>
                 <input onChange={(e) => setSale(e.target.value)} id="saleUpload" type="number" placeholder="Total Net" required />
                 <input onChange={(e) => setGST(e.target.value)} id="gstUpload" type="number" placeholder="Total Tax" required />
                 <input onChange={(e) => setDiscount(e.target.value)} id="discountUpload" type="number" placeholder="Partner Discount" required />

@@ -4,13 +4,14 @@ import React, { useState } from 'react';
 function ViewDS() {
 
     const [fetchDate, setFetchDate] = useState("");
+    const [fetchShop, setFetchShop] = useState("");
     const [dailySheetFig, setDailySheetFig] = useState("");
 
     async function getData() {
         const { data, error } = await supabase
-            .from('kav2022')
+            .from('kaveri')
             .select('*')
-            .eq('date', fetchDate)
+            .eq('key', fetchDate+fetchShop)
 
         if (data) {
             for (let i in data) {
@@ -31,6 +32,17 @@ function ViewDS() {
         <div id="viewDSPage">
             <h1>View Daily Sheet</h1>
             <input onChange={(e) => setFetchDate(e.target.value)} type="date" />
+            <select id="shopUpload" onChange={(e) => setFetchShop(e.target.value)} required>
+                    <option value="BTM">BTM</option>
+                    <option value="EC2">EC2</option>
+                    <option value="JBN">JBN</option>
+                    <option value="VTR">VTR</option>
+                    <option value="HRU">HRU</option>
+                    <option value="KTR">KTR</option>
+                    <option value="DDK">DDK</option>
+                    <option value="MLL">MLL</option>
+                    <option value="ORR">ORR</option>
+                </select>
             <p>{dailySheetFig}</p>
             <button onClick={() => getData()}>Get Data</button>
         </div>

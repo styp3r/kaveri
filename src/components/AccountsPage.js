@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { supabase } from '../supabaseClient';
 import { Link } from 'react-router-dom';
 import DisplayItemsFromServer from './DisplayItemsFromServer'
+import DailySheetExcelTemplate from './DailySheetExcelTemplate';
 
 function AccountsPage() {
 
@@ -11,12 +12,13 @@ function AccountsPage() {
 
     //Retrieve data and generate excel sheet for data between this date range
     async function generateCashFlow() {
-        let { data: kav2022, error } = await supabase
-            .from('kav2022')
+
+        let { data: kav, error } = await supabase
+            .from('kaveri')
             .select('*')
 
 
-        setItemArr(kav2022)
+        setItemArr(kav)
 
         if (error) {
             console.log(error);
@@ -27,11 +29,12 @@ function AccountsPage() {
         //Send retrieved values to excel generator instead of just displaying items
         if ((d.date).includes(monthDate)) {
             return (
-                <DisplayItemsFromServer date={d.date} sale={d.sale} gst={d.gst} discount={d.discount} cred={d.creditCard} dig={d.digital} pPending={d.partnerPending} cash={d.cash} />
+                <DisplayItemsFromServer key={d.key} date={d.date} shop= {d.shop} sale={d.sale} gst={d.gst} discount={d.discount} cred={d.creditCard} dig={d.digital} pPending={d.partnerPending} cash={d.cash} />
             );
         }
     }
 
+    
 
     return (
         <div id="accountsPage">
@@ -59,6 +62,7 @@ function AccountsPage() {
                         </div>
                     </Link>
                 </div>
+                <DailySheetExcelTemplate />
             </div>
 
             {/* Cash Flow */}

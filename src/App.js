@@ -19,6 +19,7 @@ import {
 function App() {
   return (
     <BrowserRouter>
+    <p>HEADER</p> 
       <div className="App">
         <Navbar />
         {/*<Auth />*/}
