@@ -41,6 +41,26 @@
   cursor: pointer;
 }
 
+#dataExistsStatus{
+  color: #ffffff;
+  display: none;
+  background-color: #00cc99;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+#dataDoesNotExistStatus{
+  color: #ffffff;
+  display: none;
+  background-color: #fa0f0f;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.linkReadyStatusBlock{
+  display: block;
+}
+
 .App {
   text-align: center;
   overflow-x: hidden;
@@ -254,5 +274,6 @@
   border-radius: 0.5rem;
   padding: 0 0 0 0.5rem;
 }
+
 
 

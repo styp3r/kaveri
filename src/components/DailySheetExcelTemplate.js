@@ -5,7 +5,7 @@ import { supabase } from '../supabaseClient';
 
 function DailySheetExcelTemplate() {
 
-  const [monthDate, setMonthDate] = useState("")
+  const [day, setDay] = useState("")
   const [itemArr, setItemArr] = useState([])
 
   //Retrieve data and generate excel sheet for data between this date range
@@ -17,24 +17,30 @@ function DailySheetExcelTemplate() {
 
 
     setItemArr(kav)
-    document.getElementById("downloadDSXLBtn").style.display = "block";
-    document.getElementById("DSGenBtn").style.display = "none";
 
     if (error) {
       console.log(error);
+      alert("ERROR: Could Not Complete Request :(");
     }
   }
 
   function setItemsToCells(d) {
     //Send retrieved values to excel generator
-    if ((d.date).includes(monthDate)) {
+    if (day === d.date) {
 
-      if (d.shop === "BTM") {
+      document.getElementById("downloadDSXLBtn").style.display = "block";
+      document.getElementById("dataExistsStatus").style.display = "inline-block";
+      document.getElementById("dataDoesNotExistStatus").style.display = "none";
+      if (d.shop === "EC2") {
         setDataForBTM(d.date, d.shop, d.sale, d.gst, d.discount, d.creditCard, d.digital, d.partnerPending, d.cash)
       }
     }
+    else {
+      document.getElementById("downloadDSXLBtn").style.display = "none";
+      document.getElementById("dataDoesNotExistStatus").style.display = "inline-block";
+      document.getElementById("dataExistsStatus").style.display = "none";
+    }
   }
-
 
   const workbook = new ExcelJS.Workbook();
   workbook.creator = 'Styp3r';
@@ -89,23 +95,25 @@ function DailySheetExcelTemplate() {
   function test() {
     workbook.xlsx.writeBuffer().then(function (buffer) {
       // done
-      console.log(buffer);
+      //console.log(buffer);
 
       const blob = new Blob([buffer], { type: "applicationi/xlsx" });
-      saveAs(blob, "myexcel.xlsx");
+      saveAs(blob, day + "- Daily Sheet.xlsx");
     });
   }
 
   return (
     <div className="template">
       <h1>Download Daily Sheet</h1>
-      <p>Enter Date</p>
+      <p>Select the Month For Which You Wish to View Daily Sheet</p>
+      <div className = "linkReadyStatusBlock">
+        <p id="dataExistsStatus">Your Download Link Is Ready!</p>
+        <p id="dataDoesNotExistStatus">Oops! Data Does Not Exist For This date :(</p>
+      </div>
       <div className="monthDateBlock">
         <input onChange={(e) => {
-          document.getElementById("downloadDSXLBtn").style.display = "none";
-          document.getElementById("DSGenBtn").style.display = "block";
-          setMonthDate(e.target.value)
-        }} className="dateInputBox" type="month" />
+          setDay(e.target.value)
+        }} className="dateInputBox" type="date" />
       </div>
       <button onClick={() => generateCashFlow()} className="DSGenBtn">Generate</button>
       <button onClick={() => test()} id="downloadDSXLBtn">Download</button>
