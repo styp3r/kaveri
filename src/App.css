@@ -1,5 +1,5 @@
 #homePage, #accountsPage, #partnersPage, #vendorsPage, #licensesPage, #insightsPage, #inventoryPage, #viewDSPage, #uploadDSPage, #editDSPage{
-  margin: 0 0 0 25rem;
+  margin: 3rem 0 0 25rem;
 }
 
 #viewList, #postAdd, #editNote{
@@ -81,7 +81,7 @@
 }
 
 #notificationModal{
-  display: block;
+  display: none;
   padding: 1rem;
   position: absolute;
   top: 5rem;
@@ -168,7 +168,7 @@
 
 .App {
   text-align: center;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #fcfcfc;
   user-select: none;
 }
@@ -224,16 +224,30 @@
   text-align: left;
 }
 
-.balanceValuesBlock{
-  width: 90%;
-  margin: 5rem 0 5rem 0;
+.overviewSummary{
   display: flex;
-  justify-content: space-evenly;
+}
+
+.leaderboard{
+  width: 93%;
+  height: 20rem;
+  margin: 5rem 0 0 0;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  border: solid 1px #dfdfdf;
+}
+
+.balanceValuesBlock{
+  width: 30%;
+  margin: 0 0 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .balanceCash{
   width: 20rem;
-  height: 10rem;
+  height: 15rem;
   border-radius: 1rem;
   background: linear-gradient(45deg, #00cc99, #00e6b8);
   color: #ffffff;
@@ -242,31 +256,26 @@
 
 .balanceRevenue{
   width: 20rem;
-  height: 10rem;
+  height: 12rem;
   border-radius: 1rem;
   background-color: #464646;
   color: #ffffff;
   text-align: left;
 }
 
-.summaryChart, .performanceChart{
+.performanceChart{
+  width: 60%;
+  height: 30rem;
+  border: solid 1px #dfdfdf;
+  border-radius: 1rem;
+  background-color: #ffffff;
+}
+
+.summaryChart{
   width: 90%;
   height: 30rem;
   border: solid 1px #dfdfdf;
   border-radius: 1rem;
-}
-
-.outletsPerformanceBlock{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.shopSummary{
-  width: 15rem;
-  height: 20rem;
-  margin: 3rem 3rem 3rem 0;
-  border-radius: 1rem;
-  border: solid 1px #dfdfdf;
 }
 
 .dailySheetBlock{

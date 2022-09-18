@@ -31,9 +31,9 @@ function DailySheetExcelTemplate() {
       document.getElementById("downloadDSXLBtn").style.display = "block";
       document.getElementById("dataExistsStatus").style.display = "flex";
       document.getElementById("dataDoesNotExistStatus").style.display = "none";
-      if (d.shop === "EC2") {
+      if (d.shop === "BTM") {
         setDataForBTM(d.date, d.shop, d.sale, d.gst, d.discount, d.creditCard, d.digital, d.partnerPending, d.cash)
-      }
+      } //Copy-Paste for all shops
     }
     else {
       document.getElementById("downloadDSXLBtn").style.display = "none";
@@ -48,10 +48,6 @@ function DailySheetExcelTemplate() {
   workbook.modified = new Date();
   const worksheet = workbook.addWorksheet('Daily Sheet', { pageSetup: { paperSize: 9, orientation: 'landscape' } });
   worksheet.headerFooter.oddFooter = "Page &P of &N";
-  worksheet.autoFilter = {
-    from: 'A1',
-    to: 'C1',
-  }
 
   worksheet.columns = [
     { header: 'Purchases', key: 'purchases', width: 30 },
@@ -63,7 +59,7 @@ function DailySheetExcelTemplate() {
     { header: 'Receipts', key: 'receipts', width: 20 },
   ];
 
-  function setDataForBTM(date, shop, sale, gst, discount, credit, digital, pPending) {
+  function setDataForBTM(date, shop, sale, gst, discount, credit, digital, pPending) {  //Copy-Paste for all shops
     worksheet.getCell('A3').value = "Chicken";
     worksheet.getCell('A1').value = date;
     worksheet.getCell('A3').value = "Chicken";
