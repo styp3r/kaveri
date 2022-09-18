@@ -23,15 +23,15 @@ function Home() {
                 </div>
 
                 <div className = "leaderboard">
-                    <p>Hello</p>
-                    <p>Hello</p>
-                    <p>Hello</p>
-                    <p>Hello</p>
-                    <p>Hello</p>
-                    <p>Hello</p>
-                    <p>Hello</p>
-                    <p>Hello</p>
-                    <p>Hello</p>
+                    <p className = "leaderboardItem">BTM</p>
+                    <p className = "leaderboardItem">VTR</p>
+                    <p className = "leaderboardItem">JBN</p>
+                    <p className = "leaderboardItem">HRU</p>
+                    <p className = "leaderboardItem">KTR</p>
+                    <p className = "leaderboardItem">ORR</p>
+                    <p className = "leaderboardItem">EC2</p>
+                    <p className = "leaderboardItem">MLL</p>
+                    <p className = "leaderboardItem">DDK</p>
                 </div>
             </div>
         </div >
