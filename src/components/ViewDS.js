@@ -48,7 +48,7 @@ function ViewDS() {
                     <option value="ORR">ORR</option>
                 </select>
             <p>{dailySheetFig}</p>
-            <button onClick={() => getData()}>Get Data</button>
+            <button onClick={() => getData()}>View</button>
         </div>
     );
 }
