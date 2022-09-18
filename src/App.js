@@ -10,6 +10,7 @@ import EditDS from './components/EditDS';
 import ViewDS from './components/ViewDS';
 import Auth from './components/Auth';
 import Navbar from './components/Navbar';
+import PageHeader from './components/PageHeader';
 import {
   BrowserRouter,
   Routes,
@@ -19,8 +20,8 @@ import {
 function App() {
   return (
     <BrowserRouter>
-    <p>HEADER</p> 
-      <div className="App">
+    <PageHeader /> 
+      <div id = "app" className="App">
         <Navbar />
         {/*<Auth />*/}
         <Routes>

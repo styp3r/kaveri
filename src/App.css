@@ -6,6 +6,12 @@
   font-size: 4rem;
 }
 
+#pageHeader{
+  padding: 0 2rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 #uploadDSBtn{
   width: 10rem;
   height: 2rem;
@@ -57,6 +63,31 @@
   background-color: #ff3333;
   padding: 0.5rem;
   border-radius: 2rem;
+}
+
+.logOutBlockItemLight{
+  display: none;
+  margin: 2rem;
+  color: #ffdb4c;
+}
+
+.logOutBlockItemLight:hover{
+  cursor: pointer;
+}
+
+.logOutBlockItemDark{
+  display: inline-block;
+  margin: 2rem;
+  color: #969696;
+}
+
+.logOutBlockItemDark:hover{
+  cursor: pointer;
+}
+
+.logOutBtn{
+  display: inline-block;
+  margin: 2rem;
 }
 
 .subTextColor{
