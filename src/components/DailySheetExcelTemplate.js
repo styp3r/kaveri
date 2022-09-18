@@ -29,7 +29,7 @@ function DailySheetExcelTemplate() {
     if (day === d.date) {
 
       document.getElementById("downloadDSXLBtn").style.display = "block";
-      document.getElementById("dataExistsStatus").style.display = "inline-block";
+      document.getElementById("dataExistsStatus").style.display = "flex";
       document.getElementById("dataDoesNotExistStatus").style.display = "none";
       if (d.shop === "EC2") {
         setDataForBTM(d.date, d.shop, d.sale, d.gst, d.discount, d.creditCard, d.digital, d.partnerPending, d.cash)
@@ -37,7 +37,7 @@ function DailySheetExcelTemplate() {
     }
     else {
       document.getElementById("downloadDSXLBtn").style.display = "none";
-      document.getElementById("dataDoesNotExistStatus").style.display = "inline-block";
+      document.getElementById("dataDoesNotExistStatus").style.display = "flex";
       document.getElementById("dataExistsStatus").style.display = "none";
     }
   }
@@ -104,11 +104,11 @@ function DailySheetExcelTemplate() {
 
   return (
     <div className="template">
-      <h1>Download Daily Sheet</h1>
-      <p>Select the Month For Which You Wish to View Daily Sheet</p>
+      <h3 className = "subTextHeadingColor">Download Daily Sheet (MS Excel)</h3>
+      <p className = "subTextColor">Select the Date For Which You Wish to Download the Excel Sheet</p>
       <div className = "linkReadyStatusBlock">
-        <p id="dataExistsStatus">Your Download Link Is Ready!</p>
-        <p id="dataDoesNotExistStatus">Oops! Data Does Not Exist For This date :(</p>
+        <p id="dataExistsStatus"><span class="material-icons">check_circle</span>&nbsp; <span>Your Download Link Is Ready!</span></p>
+        <p id="dataDoesNotExistStatus"><span class="material-icons">warning</span>&nbsp; Oops! Data Does Not Exist For This Date :(</p>
       </div>
       <div className="monthDateBlock">
         <input onChange={(e) => {

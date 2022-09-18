@@ -13,7 +13,8 @@ function ViewDS() {
             .select('*')
             .eq('key', fetchDate+fetchShop)
 
-        if (data) {
+        
+        if (data.length !== 0) {
             for (let i in data) {
                 if(!data[i].date){
                     console.log(data[i].date)
@@ -21,6 +22,8 @@ function ViewDS() {
                 //console.log(data[i].date, data[i].sale, data[i].gst, data[i].discount, data[i].creditCard, data[i].digital)
                 setDailySheetFig(data[i].date + " " + data[i].sale + " " + data[i].gst + " " + data[i].discount + " " + data[i].partnerPending +" " + data[i].cash + " " + data[i].creditCard + " " + data[i].digital);
             }
+        } else{
+            alert("Data Does Not Exist!")
         }
 
         if (error) {
@@ -33,6 +36,7 @@ function ViewDS() {
             <h1>View Daily Sheet</h1>
             <input onChange={(e) => setFetchDate(e.target.value)} type="date" />
             <select id="shopUpload" onChange={(e) => setFetchShop(e.target.value)} required>
+                    <option value="none" selected disabled hidden>Select Branch</option>
                     <option value="BTM">BTM</option>
                     <option value="EC2">EC2</option>
                     <option value="JBN">JBN</option>

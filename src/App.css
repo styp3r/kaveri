@@ -42,19 +42,29 @@
 }
 
 #dataExistsStatus{
-  color: #ffffff;
+  width: 15rem;
+  color: #00cc99;
   display: none;
-  background-color: #00cc99;
+  background-color: #ccfff2;
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
 }
 
 #dataDoesNotExistStatus{
+  width: 21rem;
   color: #ffffff;
   display: none;
-  background-color: #fa0f0f;
+  background-color: #ff3333;
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
+}
+
+.subTextColor{
+  color: #8d8e8e;
+}
+
+.subTextHeadingColor{
+  color: #4e4e4e;
 }
 
 .linkReadyStatusBlock{

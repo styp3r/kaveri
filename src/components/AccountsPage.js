@@ -41,8 +41,8 @@ function AccountsPage() {
 
             {/* Daily Sheet */}
             <div className="dailySheetBlock">
-                <h2>Daily Sheets</h2>
-                <p>View, Add or Edit Daily Sheets</p>
+                <h1>Daily Sheets</h1>
+                <p className = "subTextColor">View, Upload or Edit Daily Sheets</p>
                 <div className="dailySheetsMenu">
                     <Link className="viewDSLinkBtn" to="/viewDS">
                         <div className="viewDailySheet">
@@ -52,7 +52,7 @@ function AccountsPage() {
 
                     <Link className="uploadDSLinkBtn" to="/uploadDS">
                         <div className="uploadDailySheet">
-                            <span class="material-icons" id="postAdd">post_add</span>
+                            <span class="material-icons" id="postAdd">file_upload</span>
                         </div>
                     </Link>
 
@@ -67,8 +67,8 @@ function AccountsPage() {
 
             {/* Cash Flow */}
             <div className="cashFlowBlock">
-                <h2>Cash Flow Report</h2>
-                <p>Select the Month and Year From The Menu Below to Generate Cash Flow Report</p>
+                <h1>Cash Flow Report</h1>
+                <p className = "subTextColor">Select the Month and Year To Generate Cash Flow Report</p>
                 <div className="monthDateBlock">
                     <input onChange={(e) => setMonthDate(e.target.value)} className="dateInputBox" type="month" />
                 </div>

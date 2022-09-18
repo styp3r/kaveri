@@ -45,6 +45,7 @@ function DSInputFields() {
                 <input onChange={(e) => { setIsEnabled(true); setDate(e.target.value) }} className="dateInputBox" id="dateUpload" type="date" required />
                 {/*<input onChange={(e) => setShop(e.target.value)} id="shopUpload" type="text" placeholder="Shop" required />*/}
                 <select id="shopUpload" onChange={(e) => setShop(e.target.value)} required>
+                    <option value="none" selected disabled hidden>Select Branch</option>
                     <option value="BTM">BTM</option>
                     <option value="EC2">EC2</option>
                     <option value="JBN">JBN</option>
