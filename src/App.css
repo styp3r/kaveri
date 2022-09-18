@@ -1,5 +1,5 @@
 #homePage, #accountsPage, #partnersPage, #vendorsPage, #licensesPage, #insightsPage, #inventoryPage, #viewDSPage, #uploadDSPage, #editDSPage{
-  margin: 3rem 0 0 25rem;
+  margin: 5rem 0 0 25rem;
 }
 
 #viewList, #postAdd, #editNote{
@@ -10,8 +10,26 @@
   padding: 0 1rem 0 1rem;
   display: flex;
   justify-content: flex-end;
-  background-color: #fcfcfc;
+  background-color: #f4f4f4;
   user-select: none;
+}
+
+#greetingsBlock{
+  position: absolute;
+  top: 1rem;
+  left: 3rem;
+  text-align: left;
+  margin: 2rem 0 0 22rem;
+  font-size: 2rem;
+}
+
+#greetings{
+  margin: 0;
+}
+
+#greetingsSubText{
+  font-size: 1rem;
+  margin: 0;
 }
 
 #uploadDSBtn{
@@ -169,7 +187,7 @@
 .App {
   text-align: center;
   overflow: hidden;
-  background-color: #fcfcfc;
+  background-color: #f4f4f4;
   user-select: none;
 }
 
@@ -234,7 +252,6 @@
   background-color: #ffffff;
   border-radius: 0.5rem;
   padding: 0 1rem 0 1rem;
-  border: solid 1px #dfdfdf;
 }
 
 .leaderboardItem{
@@ -271,7 +288,6 @@
 .performanceChart{
   width: 60%;
   height: 30rem;
-  border: solid 1px #dfdfdf;
   border-radius: 1rem;
   background-color: #ffffff;
 }

@@ -5,6 +5,10 @@ function Home() {
 
     return (
         <div id="homePage">
+            <div id="greetingsBlock">
+                <p id="greetings">Welcome, Navjyot! &#x1F44B;</p>
+                <p id="greetingsSubText" className="subTextColor">Here's what's happening today.</p>
+            </div>
             <div className="overviewBlock">
                 <div className="overviewSummary">
                     <div className="performanceChart"></div>
@@ -22,16 +26,16 @@ function Home() {
                     </div>
                 </div>
 
-                <div className = "leaderboard">
-                    <p className = "leaderboardItem">BTM</p>
-                    <p className = "leaderboardItem">VTR</p>
-                    <p className = "leaderboardItem">JBN</p>
-                    <p className = "leaderboardItem">HRU</p>
-                    <p className = "leaderboardItem">KTR</p>
-                    <p className = "leaderboardItem">ORR</p>
-                    <p className = "leaderboardItem">EC2</p>
-                    <p className = "leaderboardItem">MLL</p>
-                    <p className = "leaderboardItem">DDK</p>
+                <div className="leaderboard">
+                    <p className="leaderboardItem">BTM</p>
+                    <p className="leaderboardItem">VTR</p>
+                    <p className="leaderboardItem">JBN</p>
+                    <p className="leaderboardItem">HRU</p>
+                    <p className="leaderboardItem">KTR</p>
+                    <p className="leaderboardItem">ORR</p>
+                    <p className="leaderboardItem">EC2</p>
+                    <p className="leaderboardItem">MLL</p>
+                    <p className="leaderboardItem">DDK</p>
                 </div>
             </div>
         </div >
