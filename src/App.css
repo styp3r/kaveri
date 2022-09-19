@@ -41,9 +41,9 @@
 }
 
 #uploadDSBtn{
-  width: 10rem;
-  height: 2rem;
-  margin: 1rem 1rem 1rem 0;
+  width: 90%;
+  height: 2.5rem;
+  margin: 1rem;
   outline: none;
   background-color: #8d8e8e;
   border: none;
@@ -54,7 +54,7 @@
 #dateUpload, #shopUpload, #saleUpload, #gstUpload, #discountUpload, #pPendingUpload, #cashUpload, #creditCardUpload, #digitalUpload{
   width: 10rem;
   height: 2rem;
-  margin: 1rem 1rem 1rem 0;
+  margin: 1rem;
   border-radius: 0.3rem;
   padding: 0 0 0 0.5rem;
   border: solid 1px #dfdfdf;
@@ -132,6 +132,14 @@
   cursor: pointer;
 }
 
+.inputBlock{
+  display: flex;
+}
+
+.dateInputBox{
+  border: none;
+}
+
 .notifCard{
   width: 99%;
   height: 8rem;
@@ -140,11 +148,30 @@
   background-color: #f1f1f1;
 }
 
+.inputBlockLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: solid 1px #d6d6d6;
+}
+
+.inputBlockMid{
+  border-right: solid 1px #d6d6d6;
+}
+
+.inputBlockRight{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .viewCardTitle{
   width: 100%;
   height: 3rem;
   background-color: #303030;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
   color: #ffffff;
 }
 
@@ -158,7 +185,7 @@
   background-color: #f3f3f3;
   display: flex;
   flex-direction: column;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 .viewCardDateInput{
@@ -444,7 +471,7 @@
   color: #ffffff;
 }
 
-.viewDailySheet:hover, .uploadDailySheet:hover, .editDailySheet:hover, .uploadDSBtn:hover{
+.viewDailySheet:hover, .uploadDailySheet:hover, .editDailySheet:hover, #uploadDSBtn:hover{
   cursor: pointer;
 }
 
@@ -463,17 +490,13 @@
 }
 
 .inputFieldsForUploadBlock{
-  width: 30rem;
+  width: 40rem;
   display: flex;
   flex-direction: column;
-  text-align: center;
   justify-content: center;
   align-items: center;
-}
-
-.dateInputBox{
-  border: solid 1px #dfdfdf;
-  padding: 0.5rem;
+  background-color: #f3f3f3;
+  padding: 1rem;
   border-radius: 0.5rem;
 }
 
