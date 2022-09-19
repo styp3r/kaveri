@@ -89,38 +89,6 @@ function ViewDS() {
                 </div>
 
                 {dailySheetFig.map(dispDS)}
-
-                {/*<div className="displayCardViewDS">
-                    <div className="displayCardViewDSTitle">
-                        <p>BTM</p>
-                        <p className="viewDSDate">2022-09-15</p>
-                    </div>
-
-                    <div className="displayCardViewDSContainer">
-
-                        <div className="saleFiguresViewDSLeft">
-                            <h3>Total Sale</h3>
-                            <p>Rs.495789</p>
-                            <h3>Total Tax</h3>
-                            <p>Rs.495789</p>
-                            <h3>Cash</h3>
-                            <p>Rs.495789</p>
-                        </div>
-
-                        <div className="saleFiguresViewDSRight">
-                            <div className="partnerFiguresViewDS">
-                                <p>Partner Discount: Rs.495789</p>
-                                <p>Partner Pending: Rs.495789</p>
-                            </div>
-
-                            <div className="otherFiguresViewDS">
-                                <p>Credit Card Sales: Rs.495789</p>
-                                <p>Digital Sales: Rs.495789</p>
-                            </div>
-                        </div>
-
-                    </div>
-    </div>*/}
             </div>
         </div>
     );
