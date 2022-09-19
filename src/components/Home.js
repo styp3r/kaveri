@@ -1,4 +1,5 @@
 import React from 'react';
+import PerformanceChart from './PerformanceChart';
 
 
 function Home() {
@@ -11,7 +12,9 @@ function Home() {
             </div>
             <div className="overviewBlock">
                 <div className="overviewSummary">
-                    <div className="performanceChart"></div>
+                    <div className="performanceChartContainer">
+                        <PerformanceChart />
+                    </div>
 
                     <div className="balanceValuesBlock">
                         <div className="balanceCash">
