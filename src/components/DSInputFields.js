@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { supabase } from '../supabaseClient';
 
-function DSInputFields() {
+function DSInputFields(props) {
 
     //Daily Sheet Parameters
     const [date, setDate] = useState("");
@@ -40,7 +40,7 @@ function DSInputFields() {
 
     return (
         <div className="inputFieldsForUploadBlock">
-            <h3>Enter Daily Sheet Parameters</h3>
+            <h3>{props.mode} Daily Sheet Parameters</h3>
             <div className="inputBlock">
                 <input onChange={(e) => { setIsEnabled(true); setDate(e.target.value) }} className="dateInputBox" id="dateUpload" type="date" required />
                 {/*<input onChange={(e) => setShop(e.target.value)} id="shopUpload" type="text" placeholder="Shop" required />*/}

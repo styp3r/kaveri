@@ -65,7 +65,7 @@ function ViewDS() {
 
     return (
         <div id="viewDSPage">
-            <div className="viewBlock">
+            <div className="viewDSPageContainer">
                 <div className="viewCard">
                     <div className="viewCardTitle">
                         <p>View Daily Sheet</p>
