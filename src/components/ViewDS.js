@@ -18,7 +18,6 @@ function ViewDS() {
             //console.log(data[i].date, data[i].sale, data[i].gst, data[i].discount, data[i].creditCard, data[i].digital)
             //setDailySheetFig(data[i].date + " " + data[i].sale + " " + data[i].gst + " " + data[i].discount + " " + data[i].partnerPending + " " + data[i].cash + " " + data[i].creditCard + " " + data[i].digital);
             setDailySheetFig(getDS)
-            console.log(getDS[0])
         } else {
             alert("Data Does Not Exist!")
         }
@@ -26,6 +25,42 @@ function ViewDS() {
         if (error) {
             console.log(error);
         }
+    }
+
+    function dispDS(d) {
+        return (
+            <div className="displayCardViewDS">
+                    <div className="displayCardViewDSTitle">
+                        <p>{d.shop}</p>
+                        <p className="viewDSDate">{d.date}</p>
+                    </div>
+
+                    <div className="displayCardViewDSContainer">
+
+                        <div className="saleFiguresViewDSLeft">
+                            <h3>Total Sale</h3>
+                            <p>Rs.{d.sale}</p>
+                            <h3>Total Tax</h3>
+                            <p>Rs.{d.gst}</p>
+                            <h3>Cash</h3>
+                            <p>Rs.{d.cash}</p>
+                        </div>
+
+                        <div className="saleFiguresViewDSRight">
+                            <div className="partnerFiguresViewDS">
+                                <p>Partner Discount: {d.discount}</p>
+                                <p>Partner Pending: {d.partnerPending}</p>
+                            </div>
+
+                            <div className="otherFiguresViewDS">
+                                <p>Credit Card Sales: {d.creditCard}</p>
+                                <p>Digital Sales: Rs.{d.digital}</p>
+                            </div>
+                        </div>
+
+                    </div>
+    </div>
+        );
     }
 
     return (
@@ -53,9 +88,39 @@ function ViewDS() {
                     </div>
                 </div>
 
-                <div className="displayCardViewDS">
+                {dailySheetFig.map(dispDS)}
 
-                </div>
+                {/*<div className="displayCardViewDS">
+                    <div className="displayCardViewDSTitle">
+                        <p>BTM</p>
+                        <p className="viewDSDate">2022-09-15</p>
+                    </div>
+
+                    <div className="displayCardViewDSContainer">
+
+                        <div className="saleFiguresViewDSLeft">
+                            <h3>Total Sale</h3>
+                            <p>Rs.495789</p>
+                            <h3>Total Tax</h3>
+                            <p>Rs.495789</p>
+                            <h3>Cash</h3>
+                            <p>Rs.495789</p>
+                        </div>
+
+                        <div className="saleFiguresViewDSRight">
+                            <div className="partnerFiguresViewDS">
+                                <p>Partner Discount: Rs.495789</p>
+                                <p>Partner Pending: Rs.495789</p>
+                            </div>
+
+                            <div className="otherFiguresViewDS">
+                                <p>Credit Card Sales: Rs.495789</p>
+                                <p>Digital Sales: Rs.495789</p>
+                            </div>
+                        </div>
+
+                    </div>
+    </div>*/}
             </div>
         </div>
     );
