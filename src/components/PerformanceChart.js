@@ -23,18 +23,6 @@ function PerformanceChart() {
     let sum = 0;
     let count = 0;
 
-    function getChartData() {
-        getShopWiseData('JBN');
-        getShopWiseData('BTM');
-        getShopWiseData('VTR');
-        getShopWiseData('ORR');
-        getShopWiseData('DDK');
-        getShopWiseData('MLL');
-        getShopWiseData('HRU');
-        getShopWiseData('KTR');
-        getShopWiseData('EC2');
-    }
-
     async function getShopWiseData(shop) {
         const { data: getCD, error } = await supabase
             .from('kaveri')
@@ -88,7 +76,18 @@ function PerformanceChart() {
     }
 
     useEffect(() => {
-        // Update the document title using the browser API
+        function getChartData() {
+            getShopWiseData('JBN');
+            getShopWiseData('BTM');
+            getShopWiseData('VTR');
+            getShopWiseData('ORR');
+            getShopWiseData('DDK');
+            getShopWiseData('MLL');
+            getShopWiseData('HRU');
+            getShopWiseData('KTR');
+            getShopWiseData('EC2');
+        }
+        
         getChartData();
       }, []);
 
