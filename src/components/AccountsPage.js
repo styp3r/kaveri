@@ -7,8 +7,6 @@ import DailySheetExcelTemplate from './DailySheetExcelTemplate';
 function AccountsPage() {
 
     const [monthDate, setMonthDate] = useState("")
-    const d = new Date();
-    let month = (d.getMonth() + 1).toString().padStart(2, "0");
     const [itemArr, setItemArr] = useState([])
 
     //Retrieve data and generate excel sheet for data between this date range

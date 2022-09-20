@@ -132,18 +132,6 @@
   cursor: pointer;
 }
 
-.PerformanceChart{
-  
-}
-
-.perfChartDateInput{
-  border: none;
-  background-color: #dfdfdf;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  color: #373737;
-}
-
 .inputBlock{
   display: flex;
 }
@@ -556,5 +544,12 @@
   margin: 0 5rem 0 0;
 }
 
+.perfChartDateInput{
+  border: none;
+  background-color: #dfdfdf;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: #373737;
+}
 
 
